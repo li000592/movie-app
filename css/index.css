@@ -1,0 +1,291 @@
+:root {
+    --primary-1: #5fa8de;
+    --primary-2: white;
+    --black: #111214;
+    /* --primary-1: rgb(52,168,83); */
+    --secondary1: #595f6e;
+    --grey: #595f6e;
+    --grey2:rgb(122, 127, 139);
+    --grey3:rgb(208, 209, 212);
+}
+.fab{
+    background-color: var(--primary-1);
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: var(--grey) solid 1px;
+    cursor: pointer;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 2px 2px 5px -3px rgba(0,0,0,0.95);
+}
+.fab-logo {
+    width: 30px;
+    height: 30px;
+    padding-left: 9px;
+    padding-top: 9px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+}
+/* #actors{
+    left: 0px;
+    position: left;
+    justify-content: flex-end;
+} */
+.page {
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.4s linear;
+}
+.page:last-child {
+    border: none;
+}
+.page.active {
+    opacity: 1;
+    z-index: 100;
+}
+/* home page */
+h2 {
+    font-family: 'Racing Sans One', cursive;
+    color:  var(--primary-1);
+    padding-bottom: 30px;
+    width: 96vw;
+    text-align:center;
+}
+#search {
+    outline: none;
+    font-size: 25px;
+    color: whitesmoke;
+    background-color: var(--primary-1);
+    width: 20%;
+    max-width: 150px;
+    margin: 10% 30% 0 30%;
+    border-radius: 25px;
+}
+.form {
+    height: 100%;
+    width: 80%;
+    position: relative;
+    height: 100px;
+    overflow: hidden;
+}
+.form input {
+    width: 100%;
+    height: 100%;
+    color: #595f6e;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+.form label {
+    position: absolute;
+    bottom: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid var(--black);
+}
+
+.form label::after{
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 2px solid var(--primary-1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.content-name {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.form input:focus + .label-name .content-name, .form input:valid + .label-name .content-name{
+    transform: translateY(-120%);
+    color: var(--primary-1);
+}
+.form input:focus + .label-name::after, .form input:valid + .label-name::after{
+    transform: translateX(0%);
+}
+
+/* actors page */
+.header {
+    background-color: #2196F3;
+    width: 100vw;
+    min-height: 50px;
+    max-height: 120px;
+    position: fixed;
+    top:0px;
+    box-shadow: -1px 7px 32px -3px rgba(0,0,0,0.75);
+}
+.logo{
+    font-size: 45px;
+    font-family: 'Racing Sans One', cursive;
+    color:  var(--primary-2);
+    align-items: center;
+    margin: 10px 15% 10px 15%;
+    height: 100%;
+    width: 100%;
+    margin-left: 30px;
+
+}
+.actorsList {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+}
+.Card {
+    display: flex;   
+    height: 210px;
+    width: 90vw;
+    margin-left: 5%;
+    /* padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; */
+
+    border-bottom: 1px solid var(--grey);
+}
+.actorsPortrait{
+    min-width: 140px;
+    max-width: 140px;
+    min-height: 210px;
+    background-color: rgb(214, 212, 212);
+    padding: 0;
+
+}
+#actorTotal {
+    color: var(--grey2);
+    background-color: var(--primary-2);
+}
+
+.container {
+    left: 0px;
+    width: 100%;
+}
+img {
+    width: 140px;
+    height: 210px;
+}
+
+#actorsNum {
+    margin-top: 120px;
+}
+.actorsInfo {
+    padding-left: 10px;
+    padding-right: 5%;
+    
+
+}
+h3 {
+    font-size: 2rem;
+    color: var(--primary-1);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* page movies */
+.moviesCard {
+    display: flex;   
+    height: 210px;
+    width: 90vw;
+    margin-left: 5%;
+    /* padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; */
+    border-bottom: 1px solid var(--grey2);
+}
+#divForDelete {
+    padding-top: 100px;
+}
+.page #movies {
+    min-height: 100%vh;
+}
+.moviesInfo {
+    padding-left: 5%;
+}
+h1{
+    font-size: 2rem;
+    color: var(--primary-1);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* page movie */
+.posterSize {
+    min-height: 400px;
+    max-height: 500px;
+    min-width: 250px;
+    max-width: 300px;
+    position: center;
+    align-items: center;
+    padding-left: 20%;
+    padding-right: 10%;
+    margin-top: 120px;
+    
+}
+.detials{
+    align-items: center;
+    background-color: var(--grey3);
+    padding: 10% 10% 10% 10%;
+    border-radius: 5%;
+    height: 500px;
+}
+.detials p {
+    color: var(--black);
+}
+#moviepage{
+    display: flex;
+    position: center;
+    align-items: center;
+
+}
+.divforDelete2 {
+    margin-top: 100px;
+    display: flex;
+    position: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.castCard {   
+    height: 210px;
+    width: 90vw;
+    margin-left: 5%;
+    /* padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%; */
+    border-bottom: 1px solid var(--grey2);
+    flex-direction: row;
+}

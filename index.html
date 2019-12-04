@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self' data: gap: https://api.themoviedb.org 'unsafe-eval';
+    connect-src 'self' https://api.themoviedb.org;
+    media-src *;   
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    script-src 'self' 'unsafe-inline' https://maps.googleapis.com https://maps.gstatic.com;
+    img-src 'self' data: * https://maps.googleapis.com https://maps.gstatic.com;
+    font-src 'self' data: * https://fonts.gstatic.com https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Racing+Sans+One&display=swap" rel="stylesheet">
+    <title>The Movie Searcher</title>
+</head>
+<body>
+    <main>
+        <div id="home" class="page active">
+            <!-- <img id="logo" src="./img/Artboard 1.png" alt="Logo"> -->
+            <h2>The Movie Searcher</h1>    
+            <!-- <form onsubmit=search()></form> -->
+            <div class="form">
+                    <input id="input" type="text" name="name" autocomplete="off" required/> 
+                    <label for="name" class="label-name">             
+                        <span class="content-name">Actor Name</span>
+                    </label>   
+            </div>
+            <button id="search" data-href="actors">GO!</button>          
+        </div>
+
+
+        <div id="actors" class="page">
+            <div class="header">
+                <h4 class="logo">The Movie Searcher</h1>
+            </div>
+            <div id="actorsNum"></div>
+            <div class="container">
+                <div id="actorsList"></div>
+            </div>
+            <!-- <a class="ab" href="#home" data-href="home">Home</a> -->
+            <button class="fab" data-href="home"></button> 
+            <!-- <div class="fab" data-href="home">
+                <img class="fab-logo" src="./home-button.svg" alt="fab-button">
+            </div> -->
+        </div>
+        
+        <div id="movies" class="page">
+                <div class="header">
+                    <h4 id="actorName" class="logo"></h1>
+                </div>
+                <div class="container">
+                        <div id="moviesList"></div>
+                </div>
+            <button class="fab" data-href="home"></button> 
+        </div>
+        
+        <div id="movie" class="page">
+            <div class="header">
+                <h4 id="movieName" class="logo"></h1>
+            </div>
+            <div class="container">
+                <div id="moviepage"></div>
+            </div>
+            <button class="fab" data-href="home"></button> 
+        </div>
+    </main>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
